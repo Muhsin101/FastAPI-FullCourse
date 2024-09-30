@@ -1,0 +1,16 @@
+INSERT
+VALUES
+
+SELECT
+FROM
+WHERE
+
+UPDATE
+SET
+WHERE
+
+DELETE
+FROM
+WHERE
+
+* - all columns and rows
