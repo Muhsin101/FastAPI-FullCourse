@@ -1,0 +1,64 @@
+JSON Web Token - JWT
+-a self-contained way to securely transmit data between 2 parties using JSON Object
+-JWT trusted because each JWT can be digitally signed , which allows server to know if the JWT has been changed
+-JWT used for dealing with auth
+-way for info to be exchanged between server client
+
+JWT Structure
+-3 parts separated by .
+    Header
+    Payload
+    signature
+
+JWT Header
+-2 parts
+    alg = algorithm for signing
+    typ = specific type of token
+-header is encoded using base64 which creates the header of the token
+
+JWT Payload
+-consists of the data
+-payloads data contains claims
+-3 different types of claims
+    Registered = predefined, recommended but not mandatory
+        iss = issuer
+            identifies the principle that issues the JWT
+        sub = subject
+            holds statements about the subject
+            either global or local
+        exp = expiration time
+            when JWT expires
+            makes sure the current date and time is before exp
+    Public
+    Private
+-payload is encoded using base64 which creates the payload of the token
+
+JWT Signature
+-token signature is created by using algorithm in the header to hash out the encoded header, encoded payload  with a secret
+-secret needs to be saved on server where client does not have access to
+
+example
+JWT HEADER
+{
+    "alg": "HS256",
+    "typ": "JWT"
+}
+
+JWT PAYLOAD
+{
+    "sub": "1234567890"
+    "name": "Eric Roby"
+    "given_name": "Eric"
+    "family_name": "Roby"
+    "email": "codingwithroby@gmail.com"
+    "admin": true
+}
+
+JWT SIGNATURE
+HMACSHA256(
+    base64UrlEncode(header) + "." +
+    base64UrlEncode(payload),
+    learnonline)
+
+Token
+(ubvjabbavjbavjkknvdadvvbjbjk.){jhncihchnguhnvnmhcevogihnvivjnpcgrjmcrnqrwjfconjgcmgjgmigjmc.}[ghjjbvjnuihuqgfbfjbjbjbvjbvubuwvbvnvjnwlkwnijfifwjio]
