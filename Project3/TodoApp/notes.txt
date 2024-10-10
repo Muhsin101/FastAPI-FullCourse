@@ -86,3 +86,10 @@ postgreSQL
 -open source relationl dbms
 -secure
 -requires server
+
+mySQL
+-open source rdms
+requirees server
+-production database
+-scalable
+-secure
