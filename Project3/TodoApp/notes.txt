@@ -62,3 +62,27 @@ HMACSHA256(
 
 Token
 (ubvjabbavjbavjkknvdadvvbjbjk.){jhncihchnguhnvnmhcevogihnvivjnpcgrjmcrnqrwjfconjgcmgjgmigjmc.}[ghjjbvjnuihuqgfbfjbjbjbvjbvubuwvbvnvjnwlkwnijfifwjio]
+
+Production DBMS
+mySQL or postgreSQL
+
+Production DBMS vs SQLite:
+SQLite:
+-sqlite provides local storage for apps and devices
+-sqlite emphasises on economy, efficiency and simplicity
+-sqlite is for small to medium apps
+-runs in-memory or local disk drive
+-deploy  alongside with app
+
+DBMS:
+-focuses on scalability, concurrency and control
+-if app is going to have thousands of users use DBMS
+-run on own server and port
+    -need to make sure dbms is running and have auth linking ti the dbms
+-have to deploy db separate from app
+
+postgreSQL
+-production ready
+-open source relationl dbms
+-secure
+-requires server
