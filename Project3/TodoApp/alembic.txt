@@ -1,0 +1,22 @@
+Alembic
+-lightweight db migration tool for when using SQLAlchemy
+-allow us to plan, transfer and upgrade resources within db
+-allows you to change a SSQLAlchemy db table after it has been created
+
+alembic commands
+alembic init <folder name>, initialises a new generic environment
+alembic revision -m <message>, creates a new revision of the environment
+alembic upgrade <revision id>, run our upgrade migration to our db
+alembic downgrade -1, run our downgrade migration to our db
+
+alembic.ini file
+-file that alembic looks for when invoked
+-contains a bunch of config info for alembic, changeable to match project
+
+alembic.dir file
+-all environmental properties for alembic
+-holds all revisions of your application
+-where you call migrations
+
+alembic revisions
+-how we create a new alembic file where we can add some type of db upgrade
