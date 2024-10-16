@@ -11,7 +11,7 @@ def test_return_user(test_user):
     assert response.json()['username'] == "muhsin101"
     assert response.json()['email'] == "muhsin101@email.com"
     assert response.json()['first_name'] == "muhsin"
-    assert response.json()['surname'] == "rahman"
+    assert response.json()['last_name'] == "rahman"
     assert response.json()['role'] == "admin"
     assert response.json()['phone_number'] == "(111)-111-1111"
 
