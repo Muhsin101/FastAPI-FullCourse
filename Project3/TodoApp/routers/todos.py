@@ -10,7 +10,10 @@ from .auth import get_current_user
 # creates APIRouter instance
 # allows route grouping
 # is included in the main FastAPI app
-router = APIRouter()
+router = APIRouter(
+    prefix='/todos',
+    tags=['todos']
+)
 
 
 def get_db():
