@@ -184,7 +184,7 @@
                 email: data.email,
                 username: data.username,
                 first_name: data.firstname,
-                last_name: data.lastname,
+                last_name: data.last_name,
                 role: data.role,
                 phone_number: data.phone_number,
                 password: data.password
