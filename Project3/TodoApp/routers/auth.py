@@ -1,6 +1,6 @@
 from datetime import timedelta, datetime, timezone
 from typing import Annotated
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from starlette import status
@@ -9,6 +9,8 @@ from ..models import Users
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
+from fastapi.templating import Jinja2Templates
+
 
 # creates new router for handling auth related routes
 # prefix specifies all routes defined in this route will start with '/auth'
@@ -54,6 +56,16 @@ def get_db():
 # db_dependency - dependency injection - do something before executing desired code
 # a way to declare things that are required for app/func to work by injecting dependencies
 db_dependency = Annotated[Session, Depends(get_db)]
+
+templates = Jinja2Templates(directory="TodoApp/templates")
+
+### Pages ###
+
+@router.get("/login-page")
+def render_login_page(request: Request):
+    return templates.TemplateResponse("login.html", {"request": request})
+
+### Endpoints ###
 
 # function checks if user exists in db with username
 # verifies the password matches to the stored one, using bcrypt_context.verify()
