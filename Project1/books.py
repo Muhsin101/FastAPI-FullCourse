@@ -11,6 +11,7 @@ BOOKS = [
     {'title': "Title Six", 'author': "Author Two", 'category': "maths"}
 ]
 
+# api endpoint is where the data is consumed by the client
 # api endpoint that returns all books
 @app.get("/books")
 async def read_all_books():
